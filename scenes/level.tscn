@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bismfiox3gfv6"]
+
+[ext_resource type="Texture2D" uid="uid://carjegks1cfce" path="res://assets/sprites/background-day.png" id="1_2q6dc"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = -602.0
+offset_top = -336.0
+offset_right = 590.0
+offset_bottom = 176.0
+texture = ExtResource("1_2q6dc")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+offset_left = 7.0
+offset_top = 155.0
+offset_right = 1192.0
+offset_bottom = 811.0
+texture = ExtResource("1_2q6dc")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
