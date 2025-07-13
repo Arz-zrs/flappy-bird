@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if is_dead:
 		return
 	
-	velocity.x = FORWARD_SPEED
+	#velocity.x = FORWARD_SPEED
 	velocity.y += GRAVITY * delta
 
 	if velocity.y > MAX_FALL_SPEED:
