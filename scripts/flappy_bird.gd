@@ -38,3 +38,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 	rotation = lerp_angle(rotation, deg_to_rad(clamp(velocity.y * 0.2, -30, 90)), 0.1)
+
+
+func _on_player_hbox_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

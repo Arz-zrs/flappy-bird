@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dojh4uuybsryv"]
+[gd_scene load_steps=7 format=3 uid="uid://dojh4uuybsryv"]
 
-[ext_resource type="Script" uid="uid://cl4ivtwarox" path="res://scripts/flappy_bird.gd" id="1_nj5km"]
+[ext_resource type="Script" path="res://scripts/flappy_bird.gd" id="1_nj5km"]
 [ext_resource type="Texture2D" uid="uid://ds1x88i683ff1" path="res://assets/sprites/yellowbird-midflap.png" id="2_m3bpb"]
+[ext_resource type="Script" path="res://scripts/player_hbox.gd" id="3_vwgxl"]
+[ext_resource type="PackedScene" uid="uid://cjefwxbfq8p4v" path="res://scenes/ui_layeer.tscn" id="4_guah2"]
+[ext_resource type="PackedScene" uid="uid://rafcbvws4q6b" path="res://scenes/score.tscn" id="5_dgnwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_inwqo"]
 
@@ -15,3 +18,17 @@ shape = SubResource("CircleShape2D_inwqo")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1
 texture = ExtResource("2_m3bpb")
+
+[node name="player_hbox" type="Area2D" parent="."]
+script = ExtResource("3_vwgxl")
+
+[node name="area" type="CollisionShape2D" parent="player_hbox"]
+z_index = 1
+shape = SubResource("CircleShape2D_inwqo")
+
+[node name="ui_layeer" parent="." instance=ExtResource("4_guah2")]
+
+[node name="score" parent="ui_layeer" instance=ExtResource("5_dgnwj")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="player_hbox" to="player_hbox" method="_on_area_entered"]
